@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    render json: @post, status: 200                        
+    @post = Post.find(params[:id])
+    render json: @post, status: 200
    end
 
   def new
